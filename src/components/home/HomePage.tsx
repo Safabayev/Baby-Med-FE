@@ -18,33 +18,33 @@ import { site } from "@/content/site";
 import { t } from "@/lib/i18n";
 
 const cardTones = {
-  pink: "bg-brand-pink-light",
-  teal: "bg-brand-teal-light",
-  sky: "bg-sky-50",
-  amber: "bg-amber-50",
-  rose: "bg-pink-100",
-  emerald: "bg-emerald-100",
-  violet: "bg-violet-100",
+  pink: "bg-brand-pink-light dark:bg-brand-pink/15",
+  teal: "bg-brand-teal-light dark:bg-brand-teal/15",
+  sky: "bg-sky-50 dark:bg-sky-500/15",
+  amber: "bg-amber-50 dark:bg-amber-400/15",
+  rose: "bg-pink-100 dark:bg-pink-500/15",
+  emerald: "bg-emerald-100 dark:bg-emerald-500/15",
+  violet: "bg-violet-100 dark:bg-violet-500/15",
 };
 
 const doctorTones = {
   pink: {
-    card: "border-pink-100 from-pink-50",
+    card: "border-pink-100 from-pink-50 dark:border-pink-900/40 dark:from-pink-950/40",
     avatar: "from-brand-pink to-brand-pink-dark shadow-pink-200/50",
     role: "text-brand-pink",
   },
   teal: {
-    card: "border-teal-100 from-teal-50",
+    card: "border-teal-100 from-teal-50 dark:border-teal-900/40 dark:from-teal-950/40",
     avatar: "from-brand-teal to-brand-teal-dark shadow-teal-200/50",
     role: "text-brand-teal",
   },
   sky: {
-    card: "border-sky-100 from-sky-50",
+    card: "border-sky-100 from-sky-50 dark:border-sky-900/40 dark:from-sky-950/40",
     avatar: "from-sky-400 to-sky-600 shadow-sky-200/50",
     role: "text-sky-600",
   },
   violet: {
-    card: "border-violet-100 from-violet-50",
+    card: "border-violet-100 from-violet-50 dark:border-violet-900/40 dark:from-violet-950/40",
     avatar: "from-violet-400 to-violet-600 shadow-violet-200/50",
     role: "text-violet-600",
   },
@@ -52,15 +52,15 @@ const doctorTones = {
 
 const roomTones = {
   pink: {
-    art: "from-pink-100 via-pink-50 to-rose-100",
+    art: "from-pink-100 via-pink-50 to-rose-100 dark:from-pink-950 dark:via-rose-950 dark:to-pink-900",
     badge: "text-brand-pink-dark",
   },
   teal: {
-    art: "from-teal-100 via-cyan-50 to-teal-50",
+    art: "from-teal-100 via-cyan-50 to-teal-50 dark:from-teal-950 dark:via-cyan-950 dark:to-teal-900",
     badge: "text-brand-teal-dark",
   },
   violet: {
-    art: "from-violet-100 via-fuchsia-50 to-pink-50",
+    art: "from-violet-100 via-fuchsia-50 to-pink-50 dark:from-violet-950 dark:via-fuchsia-950 dark:to-pink-950",
     badge: "text-violet-700",
   },
 };
@@ -72,18 +72,18 @@ export function HomePage({ locale }: { locale: Locale }) {
         <div className="mx-auto max-w-7xl px-4 py-16 md:py-24 lg:py-28">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-pink-100 bg-white/80 px-4 py-1.5 text-sm font-medium text-brand-pink backdrop-blur">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-card/80 px-4 py-1.5 text-sm font-medium text-brand-pink backdrop-blur">
                 <span className="h-2 w-2 animate-pulse rounded-full bg-teal-500" />
                 {t(hero.badge, locale)}
               </div>
-              <h1 className="mb-6 text-4xl leading-tight font-extrabold text-gray-900 md:text-5xl lg:text-6xl">
+              <h1 className="mb-6 text-4xl leading-tight font-extrabold text-ink md:text-5xl lg:text-6xl">
                 {t(hero.titleBefore, locale)}
                 <br />
                 <span className="text-brand-pink">{t(hero.titleAccent, locale)}</span>
                 <br />
                 {t(hero.titleAfter, locale)}
               </h1>
-              <p className="mb-8 max-w-xl text-lg leading-relaxed text-gray-600">
+              <p className="mb-8 max-w-xl text-lg leading-relaxed text-muted">
                 {t(hero.lead, locale)}
               </p>
               <div className="flex flex-col gap-4 sm:flex-row">
@@ -95,29 +95,29 @@ export function HomePage({ locale }: { locale: Locale }) {
                 </a>
                 <Link
                   href="/uslugi"
-                  className="inline-flex items-center justify-center rounded-2xl border border-pink-200 bg-white px-8 py-4 text-lg font-semibold text-brand-pink transition hover:bg-pink-50"
+                  className="inline-flex items-center justify-center rounded-2xl border border-line bg-card px-8 py-4 text-lg font-semibold text-brand-pink transition hover:bg-soft"
                 >
                   {t(hero.prices, locale)}
                 </Link>
               </div>
-              <div className="mt-12 grid grid-cols-3 gap-6 border-t border-pink-100/60 pt-8">
+              <div className="mt-12 grid grid-cols-3 gap-6 border-t border-line/70 pt-8">
                 <div>
                   <div className="text-3xl font-bold text-brand-pink">24/7</div>
-                  <div className="mt-1 text-sm text-gray-500">{t(hero.stat247, locale)}</div>
+                  <div className="mt-1 text-sm text-muted">{t(hero.stat247, locale)}</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-brand-teal">8+</div>
-                  <div className="mt-1 text-sm text-gray-500">{t(hero.statYears, locale)}</div>
+                  <div className="mt-1 text-sm text-muted">{t(hero.statYears, locale)}</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-brand-pink">100%</div>
-                  <div className="mt-1 text-sm text-gray-500">{t(hero.statCare, locale)}</div>
+                  <div className="mt-1 text-sm text-muted">{t(hero.statCare, locale)}</div>
                 </div>
               </div>
             </div>
 
             <div className="relative">
-              <div className="soft-shadow relative z-10 rounded-3xl border border-pink-50 bg-white p-8">
+              <div className="soft-shadow relative z-10 rounded-3xl border border-line bg-card p-8">
                 <div className="flex items-center justify-center py-6">
                   <img
                     src="/logo.jpg"
@@ -125,9 +125,9 @@ export function HomePage({ locale }: { locale: Locale }) {
                     className="w-full max-w-sm object-contain"
                   />
                 </div>
-                <div className="mt-2 flex items-center justify-between border-t border-pink-50 pt-5">
+                <div className="mt-2 flex items-center justify-between border-t border-line pt-5">
                   <div>
-                    <div className="text-sm text-gray-500">{t(hero.hotline, locale)}</div>
+                    <div className="text-sm text-muted">{t(hero.hotline, locale)}</div>
                     <a href={site.phoneHref} className="text-lg font-bold text-brand-pink">
                       {site.phone}
                     </a>
@@ -157,19 +157,19 @@ export function HomePage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section id="about" className="bg-white py-20">
+      <section id="about" className="bg-page py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <div>
               <span className="text-sm font-semibold tracking-wider text-brand-pink uppercase">
                 {t(about.kicker, locale)}
               </span>
-              <h2 className="mt-3 mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
+              <h2 className="mt-3 mb-6 text-3xl font-bold text-ink md:text-4xl">
                 {t(about.title, locale)}
               </h2>
-              <p className="mb-5 leading-relaxed text-gray-600">{t(about.p1, locale)}</p>
-              <p className="mb-5 leading-relaxed text-gray-600">{t(about.p2, locale)}</p>
-              <p className="leading-relaxed text-gray-600">{t(about.p3, locale)}</p>
+              <p className="mb-5 leading-relaxed text-muted">{t(about.p1, locale)}</p>
+              <p className="mb-5 leading-relaxed text-muted">{t(about.p2, locale)}</p>
+              <p className="leading-relaxed text-muted">{t(about.p3, locale)}</p>
             </div>
             <div className="grid grid-cols-2 gap-5">
               {about.cards.map((card) => (
@@ -177,11 +177,11 @@ export function HomePage({ locale }: { locale: Locale }) {
                   key={card.title.ru}
                   className={`card-hover rounded-2xl p-6 ${cardTones[card.tone]}`}
                 >
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white text-2xl shadow-sm">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-card text-2xl shadow-sm">
                     {card.icon}
                   </div>
-                  <h3 className="mb-1 font-semibold text-gray-900">{t(card.title, locale)}</h3>
-                  <p className="text-sm text-gray-600">{t(card.text, locale)}</p>
+                  <h3 className="mb-1 font-semibold text-ink">{t(card.title, locale)}</h3>
+                  <p className="text-sm text-muted">{t(card.text, locale)}</p>
                 </div>
               ))}
             </div>
@@ -189,32 +189,32 @@ export function HomePage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section id="services" className="bg-gradient-to-b from-pink-50/40 to-white py-20">
+      <section id="services" className="bg-gradient-to-b from-pink-50/40 to-page py-20 dark:from-pink-950/25">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mx-auto mb-14 max-w-2xl text-center">
             <span className="text-sm font-semibold tracking-wider text-brand-pink uppercase">
               {t(servicesBlock.kicker, locale)}
             </span>
-            <h2 className="mt-3 mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+            <h2 className="mt-3 mb-4 text-3xl font-bold text-ink md:text-4xl">
               {t(servicesBlock.title, locale)}
             </h2>
-            <p className="text-gray-600">{t(servicesBlock.lead, locale)}</p>
+            <p className="text-muted">{t(servicesBlock.lead, locale)}</p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {servicesBlock.items.map((item) => (
               <div
                 key={item.title.ru}
-                className="card-hover soft-shadow rounded-2xl border border-pink-50 bg-white p-7"
+                className="card-hover soft-shadow rounded-2xl border border-line bg-card p-7"
               >
                 <div
                   className={`mb-5 flex h-14 w-14 items-center justify-center rounded-2xl text-3xl ${cardTones[item.tone]}`}
                 >
                   {item.icon}
                 </div>
-                <h3 className="mb-3 text-xl font-bold text-gray-900">
+                <h3 className="mb-3 text-xl font-bold text-ink">
                   {t(item.title, locale)}
                 </h3>
-                <ul className="space-y-2 text-sm text-gray-600">
+                <ul className="space-y-2 text-sm text-muted">
                   {item.points.map((point) => (
                     <li key={point.ru}>• {t(point, locale)}</li>
                   ))}
@@ -233,16 +233,16 @@ export function HomePage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section id="doctors" className="bg-white py-20">
+      <section id="doctors" className="bg-page py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mx-auto mb-14 max-w-2xl text-center">
             <span className="text-sm font-semibold tracking-wider text-brand-pink uppercase">
               {t(doctorsBlock.kicker, locale)}
             </span>
-            <h2 className="mt-3 mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+            <h2 className="mt-3 mb-4 text-3xl font-bold text-ink md:text-4xl">
               {t(doctorsBlock.title, locale)}
             </h2>
-            <p className="text-gray-600">{t(doctorsBlock.lead, locale)}</p>
+            <p className="text-muted">{t(doctorsBlock.lead, locale)}</p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {doctors.map((doctor) => {
@@ -250,14 +250,14 @@ export function HomePage({ locale }: { locale: Locale }) {
               return (
                 <div
                   key={doctor.initials}
-                  className={`card-hover rounded-2xl border bg-gradient-to-b to-white p-6 text-center ${tone.card}`}
+                  className={`card-hover rounded-2xl border bg-gradient-to-b to-card p-6 text-center ${tone.card}`}
                 >
                   <div
                     className={`mx-auto mb-5 flex h-28 w-28 items-center justify-center rounded-full bg-gradient-to-br text-3xl font-bold text-white shadow-lg ${tone.avatar}`}
                   >
                     {doctor.initials}
                   </div>
-                  <h3 className="text-lg leading-snug font-bold text-gray-900">
+                  <h3 className="text-lg leading-snug font-bold text-ink">
                     {doctor.nameLines[0]}
                     <br />
                     {doctor.nameLines[1]}
@@ -265,9 +265,9 @@ export function HomePage({ locale }: { locale: Locale }) {
                   <p className={`mt-2 text-sm font-medium ${tone.role}`}>
                     {t(doctor.role, locale)}
                   </p>
-                  <p className="mt-1 text-sm text-gray-500">{t(doctor.experience, locale)}</p>
+                  <p className="mt-1 text-sm text-muted">{t(doctor.experience, locale)}</p>
                   {doctor.note ? (
-                    <p className="mt-3 text-xs text-gray-400">{t(doctor.note, locale)}</p>
+                    <p className="mt-3 text-xs text-muted">{t(doctor.note, locale)}</p>
                   ) : null}
                 </div>
               );
@@ -276,16 +276,16 @@ export function HomePage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section id="rooms" className="bg-gradient-to-b from-teal-50/30 to-white py-20">
+      <section id="rooms" className="bg-gradient-to-b from-teal-50/30 to-page py-20 dark:from-teal-950/30">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mx-auto mb-14 max-w-2xl text-center">
             <span className="text-sm font-semibold tracking-wider text-brand-teal uppercase">
               {t(roomsBlock.kicker, locale)}
             </span>
-            <h2 className="mt-3 mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+            <h2 className="mt-3 mb-4 text-3xl font-bold text-ink md:text-4xl">
               {t(roomsBlock.title, locale)}
             </h2>
-            <p className="text-gray-600">{t(roomsBlock.lead, locale)}</p>
+            <p className="text-muted">{t(roomsBlock.lead, locale)}</p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             {rooms.map((room) => {
@@ -293,7 +293,7 @@ export function HomePage({ locale }: { locale: Locale }) {
               return (
                 <div
                   key={room.title.ru}
-                  className="card-hover soft-shadow overflow-hidden rounded-2xl border border-pink-50 bg-white"
+                  className="card-hover soft-shadow overflow-hidden rounded-2xl border border-line bg-card"
                 >
                   <div
                     className={`flex h-48 items-center justify-center bg-gradient-to-br ${tone.art}`}
@@ -301,18 +301,18 @@ export function HomePage({ locale }: { locale: Locale }) {
                     <div className="text-center">
                       <div className="mb-2 text-5xl">{room.icon}</div>
                       <div
-                        className={`rounded-full bg-white/70 px-3 py-1 text-sm font-medium ${tone.badge}`}
+                        className={`rounded-full bg-card/80 px-3 py-1 text-sm font-medium ${tone.badge}`}
                       >
                         {t(room.badge, locale)}
                       </div>
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="mb-2 text-lg font-bold text-gray-900">
+                    <h3 className="mb-2 text-lg font-bold text-ink">
                       {t(room.title, locale)}
                     </h3>
-                    <p className="mb-4 text-sm text-gray-600">{t(room.text, locale)}</p>
-                    <ul className="space-y-1 text-sm text-gray-500">
+                    <p className="mb-4 text-sm text-muted">{t(room.text, locale)}</p>
+                    <ul className="space-y-1 text-sm text-muted">
                       {room.features.map((feature) => (
                         <li key={feature.ru}>✓ {t(feature, locale)}</li>
                       ))}
@@ -325,27 +325,27 @@ export function HomePage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-brand-pink-light via-white to-brand-teal-light py-20">
+      <section className="bg-gradient-to-br from-brand-pink-light via-page to-brand-teal-light py-20 dark:from-pink-950/40 dark:via-page dark:to-teal-950/40">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mx-auto mb-14 max-w-2xl text-center">
             <span className="text-sm font-semibold tracking-wider text-brand-pink uppercase">
               {t(whyBlock.kicker, locale)}
             </span>
-            <h2 className="mt-3 mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+            <h2 className="mt-3 mb-4 text-3xl font-bold text-ink md:text-4xl">
               {t(whyBlock.title, locale)}
             </h2>
           </div>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {advantages.map((item) => (
               <div key={item.title.ru} className="flex gap-5">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white text-2xl shadow-md">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-card text-2xl shadow-md">
                   {item.icon}
                 </div>
                 <div>
-                  <h3 className="mb-2 text-lg font-bold text-gray-900">
+                  <h3 className="mb-2 text-lg font-bold text-ink">
                     {t(item.title, locale)}
                   </h3>
-                  <p className="text-sm leading-relaxed text-gray-600">
+                  <p className="text-sm leading-relaxed text-muted">
                     {t(item.text, locale)}
                   </p>
                 </div>
@@ -367,7 +367,7 @@ export function HomePage({ locale }: { locale: Locale }) {
               </p>
               <a
                 href={site.phoneHref}
-                className="inline-flex items-center justify-center rounded-2xl bg-white px-8 py-4 text-lg font-bold text-brand-pink-dark transition hover:bg-pink-50"
+                className="inline-flex items-center justify-center rounded-2xl bg-white px-8 py-4 text-lg font-bold text-brand-pink-dark transition hover:bg-pink-50 dark:bg-card dark:text-brand-pink dark:hover:bg-soft"
               >
                 {site.phone}
               </a>
@@ -376,20 +376,24 @@ export function HomePage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section id="contacts" className="bg-gray-50 py-20">
+      <section id="contacts" className="bg-soft py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mx-auto mb-14 max-w-2xl text-center">
             <span className="text-sm font-semibold tracking-wider text-brand-pink uppercase">
               {t(contactsBlock.kicker, locale)}
             </span>
-            <h2 className="mt-3 mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+            <h2 className="mt-3 mb-4 text-3xl font-bold text-ink md:text-4xl">
               {t(contactsBlock.title, locale)}
             </h2>
           </div>
           <div className="grid gap-10 lg:grid-cols-2">
-            <div className="soft-shadow rounded-3xl bg-white p-8">
+            <div className="soft-shadow rounded-3xl bg-card p-8">
               <div className="mb-6">
-                <img src="/logo.jpg" alt="Baby Med" className="h-12 object-contain" />
+                <img
+                  src="/logo.jpg"
+                  alt="Baby Med"
+                  className="h-12 rounded-md bg-white object-contain p-0.5"
+                />
               </div>
               <div className="space-y-5">
                 <ContactRow
@@ -418,7 +422,7 @@ export function HomePage({ locale }: { locale: Locale }) {
                   value={t(site.hours, locale)}
                 />
               </div>
-              <div className="mt-8 border-t border-gray-100 pt-6">
+              <div className="mt-8 border-t border-line pt-6">
                 <a
                   href={site.phoneHref}
                   className="block w-full rounded-xl bg-brand-pink py-3.5 text-center font-semibold text-white transition hover:bg-brand-pink-dark"
@@ -428,18 +432,18 @@ export function HomePage({ locale }: { locale: Locale }) {
               </div>
             </div>
 
-            <div className="soft-shadow relative flex min-h-[400px] items-center justify-center overflow-hidden rounded-3xl bg-white">
-              <div className="absolute inset-0 bg-gradient-to-br from-pink-100 via-sky-50 to-teal-50" />
+            <div className="soft-shadow relative flex min-h-[400px] items-center justify-center overflow-hidden rounded-3xl bg-card">
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-100 via-sky-50 to-teal-50 dark:from-pink-950 dark:via-sky-950 dark:to-teal-950" />
               <div className="relative z-10 p-8 text-center">
                 <div className="mb-4 text-5xl">📍</div>
-                <div className="mb-2 text-xl font-bold text-gray-800">ул. Хонка, 164B</div>
-                <div className="mb-1 text-gray-600">{t(site.region, locale)}</div>
-                <div className="mb-6 text-sm text-gray-500">{t(site.landmark, locale)}</div>
+                <div className="mb-2 text-xl font-bold text-ink">ул. Хонка, 164B</div>
+                <div className="mb-1 text-muted">{t(site.region, locale)}</div>
+                <div className="mb-6 text-sm text-muted">{t(site.landmark, locale)}</div>
                 <a
                   href={site.mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-pink-200 bg-white px-5 py-2.5 text-sm font-semibold text-brand-pink shadow-sm transition hover:bg-gray-50"
+                  className="inline-flex items-center gap-2 rounded-full border border-line bg-card px-5 py-2.5 text-sm font-semibold text-brand-pink shadow-sm transition hover:bg-soft"
                 >
                   {t(contactsBlock.openMap, locale)}
                 </a>
@@ -467,9 +471,9 @@ function ContactRow({
         •
       </div>
       <div>
-        <div className="text-sm text-gray-500">{label}</div>
-        <div className="font-medium text-gray-900">{value}</div>
-        {hint ? <div className="mt-0.5 text-sm text-gray-500">{hint}</div> : null}
+        <div className="text-sm text-muted">{label}</div>
+        <div className="font-medium text-ink">{value}</div>
+        {hint ? <div className="mt-0.5 text-sm text-muted">{hint}</div> : null}
       </div>
     </div>
   );

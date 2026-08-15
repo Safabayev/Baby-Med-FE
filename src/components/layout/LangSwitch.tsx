@@ -12,7 +12,7 @@ export function LangSwitch({ locale }: LangSwitchProps) {
   const pathname = usePathname();
 
   return (
-    <div className="flex overflow-hidden rounded-full border border-pink-200 text-xs font-semibold">
+    <div className="flex overflow-hidden rounded-full border border-line text-xs font-semibold">
       {routing.locales.map((item) => {
         const active = item === locale;
         return (
@@ -22,7 +22,7 @@ export function LangSwitch({ locale }: LangSwitchProps) {
             className={
               active
                 ? "bg-brand-pink px-3 py-1.5 text-white"
-                : "px-3 py-1.5 text-gray-600 hover:bg-pink-50"
+                : "px-3 py-1.5 text-muted hover:bg-soft"
             }
             aria-pressed={active}
             onClick={() => router.replace(pathname, { locale: item })}

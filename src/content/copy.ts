@@ -30,6 +30,8 @@ export const nav = {
   call: { ru: "Позвонить", uz: "Qo'ng'iroq qilish" } satisfies Localized,
   openMenu: { ru: "Открыть меню", uz: "Menyuni ochish" } satisfies Localized,
   closeMenu: { ru: "Закрыть меню", uz: "Menyuni yopish" } satisfies Localized,
+  themeToDark: { ru: "Включить тёмную тему", uz: "Qorong'u mavzuni yoqish" } satisfies Localized,
+  themeToLight: { ru: "Включить светлую тему", uz: "Yorug' mavzuni yoqish" } satisfies Localized,
 };
 
 export const hero = {

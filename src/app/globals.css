@@ -1,5 +1,29 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --page: oklch(99.2% 0.008 350);
+  --ink: oklch(27% 0.02 350);
+  --muted: oklch(48% 0.02 350);
+  --card: oklch(100% 0 0);
+  --line: oklch(93% 0.03 350);
+  --soft: oklch(97% 0.02 350);
+  --shadow: 0 10px 40px -10px oklch(30% 0.04 350 / 0.12);
+  color-scheme: light;
+}
+
+.dark {
+  --page: oklch(18% 0.02 350);
+  --ink: oklch(96% 0.012 350);
+  --muted: oklch(78% 0.02 350);
+  --card: oklch(23% 0.022 350);
+  --line: oklch(32% 0.03 350);
+  --soft: oklch(22% 0.028 350);
+  --shadow: 0 12px 36px -14px oklch(0% 0 0 / 0.45);
+  color-scheme: dark;
+}
+
 @theme inline {
   --color-brand-pink: #e91e63;
   --color-brand-pink-dark: #c2185b;
@@ -7,6 +31,12 @@
   --color-brand-teal: #00897b;
   --color-brand-teal-dark: #00695c;
   --color-brand-teal-light: #e0f2f1;
+  --color-page: var(--page);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --color-soft: var(--soft);
   --font-sans: var(--font-inter);
 }
 
@@ -15,8 +45,8 @@ html {
 }
 
 body {
-  background: #fff;
-  color: #1f2937;
+  background: var(--page);
+  color: var(--ink);
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -24,8 +54,17 @@ body {
   background: linear-gradient(135deg, #fce4ec 0%, #e0f7fa 45%, #e0f2f1 100%);
 }
 
+.dark .hero-gradient {
+  background: linear-gradient(
+    135deg,
+    oklch(24% 0.05 350) 0%,
+    oklch(21% 0.03 205) 45%,
+    oklch(21% 0.03 180) 100%
+  );
+}
+
 .soft-shadow {
-  box-shadow: 0 10px 40px -10px rgb(0 0 0 / 0.08);
+  box-shadow: var(--shadow);
 }
 
 .card-hover {
@@ -36,5 +75,9 @@ body {
 
 .card-hover:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px -12px rgb(233 30 99 / 0.18);
+  box-shadow: 0 20px 40px -12px oklch(55% 0.16 350 / 0.22);
+}
+
+.dark .card-hover:hover {
+  box-shadow: 0 18px 36px -14px oklch(0% 0 0 / 0.5);
 }

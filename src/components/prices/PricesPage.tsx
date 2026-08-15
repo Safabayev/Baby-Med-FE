@@ -5,44 +5,44 @@ import { site } from "@/content/site";
 import { t } from "@/lib/i18n";
 
 const headerTones = {
-  pink: "border-pink-100 bg-brand-pink-light",
-  rose: "border-pink-100 bg-pink-100",
-  teal: "border-teal-100 bg-brand-teal-light",
-  emerald: "border-emerald-100 bg-emerald-50",
-  violet: "border-violet-100 bg-violet-50",
-  amber: "border-amber-100 bg-amber-50",
+  pink: "border-line bg-brand-pink-light dark:bg-brand-pink/15",
+  rose: "border-line bg-pink-100 dark:bg-pink-500/15",
+  teal: "border-line bg-brand-teal-light dark:bg-brand-teal/15",
+  emerald: "border-line bg-emerald-50 dark:bg-emerald-500/15",
+  violet: "border-line bg-violet-50 dark:bg-violet-500/15",
+  amber: "border-line bg-amber-50 dark:bg-amber-400/15",
 };
 
 const priceTones = {
   pink: "text-brand-pink",
   rose: "text-brand-pink",
   teal: "text-brand-teal",
-  emerald: "text-emerald-700",
-  violet: "text-violet-700",
-  amber: "text-amber-700",
+  emerald: "text-emerald-700 dark:text-emerald-400",
+  violet: "text-violet-700 dark:text-violet-400",
+  amber: "text-amber-700 dark:text-amber-400",
 };
 
 const rowHover = {
-  pink: "hover:bg-pink-50/50",
-  rose: "hover:bg-pink-50/50",
-  teal: "hover:bg-teal-50/50",
-  emerald: "hover:bg-emerald-50/40",
-  violet: "hover:bg-violet-50/40",
-  amber: "hover:bg-amber-50/40",
+  pink: "hover:bg-pink-50/50 dark:hover:bg-pink-500/10",
+  rose: "hover:bg-pink-50/50 dark:hover:bg-pink-500/10",
+  teal: "hover:bg-teal-50/50 dark:hover:bg-teal-500/10",
+  emerald: "hover:bg-emerald-50/40 dark:hover:bg-emerald-500/10",
+  violet: "hover:bg-violet-50/40 dark:hover:bg-violet-500/10",
+  amber: "hover:bg-amber-50/40 dark:hover:bg-amber-400/10",
 };
 
 export function PricesPage({ locale }: { locale: Locale }) {
   return (
     <>
-      <section className="bg-gradient-to-br from-brand-pink-light via-white to-brand-teal-light py-14">
+      <section className="bg-gradient-to-br from-brand-pink-light via-page to-brand-teal-light py-14 dark:from-pink-950/40 dark:via-page dark:to-teal-950/40">
         <div className="mx-auto max-w-7xl px-4 text-center">
           <span className="text-sm font-semibold tracking-wider text-brand-pink uppercase">
             {t(pricesPage.kicker, locale)}
           </span>
-          <h1 className="mt-3 mb-4 text-3xl font-bold text-gray-900 md:text-5xl">
+          <h1 className="mt-3 mb-4 text-3xl font-bold text-ink md:text-5xl">
             {t(pricesPage.title, locale)}
           </h1>
-          <p className="mx-auto max-w-2xl text-gray-600">{t(pricesPage.lead, locale)}</p>
+          <p className="mx-auto max-w-2xl text-muted">{t(pricesPage.lead, locale)}</p>
         </div>
       </section>
 
@@ -51,15 +51,15 @@ export function PricesPage({ locale }: { locale: Locale }) {
           {priceGroups.map((group) => (
             <div
               key={group.id}
-              className="soft-shadow overflow-hidden rounded-3xl border border-pink-50 bg-white"
+              className="soft-shadow overflow-hidden rounded-3xl border border-line bg-card"
             >
               <div className={`border-b px-6 py-4 ${headerTones[group.tone]}`}>
-                <h2 className="flex items-center gap-3 text-xl font-bold text-gray-900">
+                <h2 className="flex items-center gap-3 text-xl font-bold text-ink">
                   <span className="text-2xl">{group.icon}</span>
                   {t(group.title, locale)}
                 </h2>
               </div>
-              <div className="divide-y divide-gray-100">
+              <div className="divide-y divide-line">
                 {group.items.map((item) => (
                   <div
                     key={item.name.ru}
@@ -68,7 +68,7 @@ export function PricesPage({ locale }: { locale: Locale }) {
                     <div>
                       <div>{t(item.name, locale)}</div>
                       {item.note ? (
-                        <div className="mt-0.5 text-xs text-gray-500">{t(item.note, locale)}</div>
+                        <div className="mt-0.5 text-xs text-muted">{t(item.note, locale)}</div>
                       ) : null}
                     </div>
                     <span
@@ -82,7 +82,7 @@ export function PricesPage({ locale }: { locale: Locale }) {
             </div>
           ))}
 
-          <div className="rounded-2xl bg-brand-pink-light p-6 text-center text-sm text-gray-600">
+          <div className="rounded-2xl bg-brand-pink-light p-6 text-center text-sm text-muted dark:bg-brand-pink/15">
             <p>
               <strong>{t(pricesPage.noteStrong, locale)}</strong> {t(pricesPage.note, locale)}{" "}
               <a href={site.phoneHref} className="font-semibold text-brand-pink">
@@ -101,7 +101,7 @@ export function PricesPage({ locale }: { locale: Locale }) {
           >
             {t(pricesPage.book, locale)}
           </a>
-          <p className="mt-4 text-sm text-gray-500">{site.phone}</p>
+          <p className="mt-4 text-sm text-muted">{site.phone}</p>
         </div>
       </section>
     </>

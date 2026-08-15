@@ -12,7 +12,7 @@ type FooterProps = {
 export function Footer({ locale, compact = false }: FooterProps) {
   if (compact) {
     return (
-      <footer className="bg-gray-900 text-gray-300">
+      <footer className="bg-[#1a1416] text-gray-300 dark:bg-black/40">
         <div className="mx-auto max-w-7xl px-4 py-10">
           <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
             <Link href="/">

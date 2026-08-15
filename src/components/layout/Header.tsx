@@ -6,6 +6,7 @@ import type { Locale } from "@/i18n/routing";
 import { nav } from "@/content/copy";
 import { site } from "@/content/site";
 import { t } from "@/lib/i18n";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { LangSwitch } from "./LangSwitch";
 
 type HeaderProps = {
@@ -27,14 +28,14 @@ export function Header({ locale }: HeaderProps) {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-pink-100 bg-white/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-line bg-page/90 backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex h-16 items-center justify-between md:h-20">
           <Link href="/" className="flex items-center gap-2.5">
             <img
               src="/logo.jpg"
               alt="Baby Med"
-              className="h-12 w-auto object-contain md:h-14"
+              className="h-12 w-auto rounded-md bg-white object-contain p-0.5 md:h-14"
             />
           </Link>
 
@@ -48,7 +49,7 @@ export function Header({ locale }: HeaderProps) {
                   className={
                     active
                       ? "font-semibold text-brand-pink"
-                      : "text-gray-600 transition hover:text-brand-pink"
+                      : "text-muted transition hover:text-brand-pink"
                   }
                 >
                   {t(link.label, locale)}
@@ -58,6 +59,7 @@ export function Header({ locale }: HeaderProps) {
           </nav>
 
           <div className="flex items-center gap-3">
+            <ThemeToggle locale={locale} />
             <LangSwitch locale={locale} />
             <a
               href={site.phoneHref}
@@ -67,7 +69,7 @@ export function Header({ locale }: HeaderProps) {
             </a>
             <button
               type="button"
-              className="rounded-lg p-2 hover:bg-pink-50 lg:hidden"
+              className="rounded-lg p-2 hover:bg-soft lg:hidden"
               aria-expanded={open}
               aria-controls="mobile-menu"
               onClick={() => setOpen((value) => !value)}
@@ -76,7 +78,7 @@ export function Header({ locale }: HeaderProps) {
                 {t(open ? nav.closeMenu : nav.openMenu, locale)}
               </span>
               <svg
-                className="h-6 w-6 text-gray-700"
+                className="h-6 w-6 text-ink"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -106,14 +108,14 @@ export function Header({ locale }: HeaderProps) {
       {open ? (
         <div
           id="mobile-menu"
-          className="border-t border-pink-100 bg-white lg:hidden"
+          className="border-t border-line bg-page lg:hidden"
         >
           <div className="space-y-1 px-4 py-4">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block py-2 font-medium text-gray-700"
+                className="block py-2 font-medium text-ink"
                 onClick={() => setOpen(false)}
               >
                 {t(link.label, locale)}
