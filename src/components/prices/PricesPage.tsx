@@ -5,36 +5,36 @@ import { site } from "@/content/site";
 import { t } from "@/lib/i18n";
 
 const headerTones = {
-  pink: "border-line bg-brand-pink-light dark:bg-brand-pink/15",
-  rose: "border-line bg-pink-100 dark:bg-pink-500/15",
-  teal: "border-line bg-brand-teal-light dark:bg-brand-teal/15",
-  emerald: "border-line bg-emerald-50 dark:bg-emerald-500/15",
-  violet: "border-line bg-violet-50 dark:bg-violet-500/15",
-  amber: "border-line bg-amber-50 dark:bg-amber-400/15",
+  pink: "border-line bg-brand-pink-light dark:bg-soft",
+  rose: "border-line bg-pink-100 dark:bg-soft",
+  teal: "border-line bg-brand-teal-light dark:bg-soft",
+  emerald: "border-line bg-emerald-50 dark:bg-soft",
+  violet: "border-line bg-violet-50 dark:bg-soft",
+  amber: "border-line bg-amber-50 dark:bg-soft",
 };
 
 const priceTones = {
   pink: "text-brand-pink",
   rose: "text-brand-pink",
-  teal: "text-brand-teal",
-  emerald: "text-emerald-700 dark:text-emerald-400",
-  violet: "text-violet-700 dark:text-violet-400",
-  amber: "text-amber-700 dark:text-amber-400",
+  teal: "text-brand-teal dark:text-brand-pink",
+  emerald: "text-emerald-700 dark:text-brand-pink",
+  violet: "text-violet-700 dark:text-brand-pink",
+  amber: "text-amber-700 dark:text-brand-pink",
 };
 
 const rowHover = {
-  pink: "hover:bg-pink-50/50 dark:hover:bg-pink-500/10",
-  rose: "hover:bg-pink-50/50 dark:hover:bg-pink-500/10",
-  teal: "hover:bg-teal-50/50 dark:hover:bg-teal-500/10",
-  emerald: "hover:bg-emerald-50/40 dark:hover:bg-emerald-500/10",
-  violet: "hover:bg-violet-50/40 dark:hover:bg-violet-500/10",
-  amber: "hover:bg-amber-50/40 dark:hover:bg-amber-400/10",
+  pink: "hover:bg-pink-50/50 dark:hover:bg-soft",
+  rose: "hover:bg-pink-50/50 dark:hover:bg-soft",
+  teal: "hover:bg-teal-50/50 dark:hover:bg-soft",
+  emerald: "hover:bg-emerald-50/40 dark:hover:bg-soft",
+  violet: "hover:bg-violet-50/40 dark:hover:bg-soft",
+  amber: "hover:bg-amber-50/40 dark:hover:bg-soft",
 };
 
 export function PricesPage({ locale }: { locale: Locale }) {
   return (
     <>
-      <section className="bg-gradient-to-br from-brand-pink-light via-page to-brand-teal-light py-14 dark:from-pink-950/40 dark:via-page dark:to-teal-950/40">
+      <section className="bg-gradient-to-br from-brand-pink-light via-page to-brand-teal-light py-14 dark:bg-page dark:bg-none">
         <div className="mx-auto max-w-7xl px-4 text-center">
           <span className="text-sm font-semibold tracking-wider text-brand-pink uppercase">
             {t(pricesPage.kicker, locale)}
@@ -82,7 +82,7 @@ export function PricesPage({ locale }: { locale: Locale }) {
             </div>
           ))}
 
-          <div className="rounded-2xl bg-brand-pink-light p-6 text-center text-sm text-muted dark:bg-brand-pink/15">
+          <div className="rounded-2xl bg-brand-pink-light p-6 text-center text-sm text-muted dark:bg-soft">
             <p>
               <strong>{t(pricesPage.noteStrong, locale)}</strong> {t(pricesPage.note, locale)}{" "}
               <a href={site.phoneHref} className="font-semibold text-brand-pink">

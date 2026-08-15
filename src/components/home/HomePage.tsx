@@ -19,50 +19,50 @@ import { site } from "@/content/site";
 import { t } from "@/lib/i18n";
 
 const cardTones = {
-  pink: "bg-brand-pink-light dark:bg-brand-pink/15",
-  teal: "bg-brand-teal-light dark:bg-brand-teal/15",
-  sky: "bg-sky-50 dark:bg-sky-500/15",
-  amber: "bg-amber-50 dark:bg-amber-400/15",
-  rose: "bg-pink-100 dark:bg-pink-500/15",
-  emerald: "bg-emerald-100 dark:bg-emerald-500/15",
-  violet: "bg-violet-100 dark:bg-violet-500/15",
+  pink: "bg-brand-pink-light dark:bg-soft",
+  teal: "bg-brand-teal-light dark:bg-soft",
+  sky: "bg-sky-50 dark:bg-soft",
+  amber: "bg-amber-50 dark:bg-soft",
+  rose: "bg-pink-100 dark:bg-soft",
+  emerald: "bg-emerald-100 dark:bg-soft",
+  violet: "bg-violet-100 dark:bg-soft",
 };
 
 const doctorTones = {
   pink: {
-    card: "border-pink-100 from-pink-50 dark:border-pink-900/40 dark:from-pink-950/40",
-    avatar: "from-brand-pink to-brand-pink-dark shadow-pink-200/50",
+    card: "border-pink-100 from-pink-50 dark:border-line dark:from-card",
+    avatar: "from-brand-pink to-brand-pink-dark shadow-pink-200/50 dark:shadow-none",
     role: "text-brand-pink",
   },
   teal: {
-    card: "border-teal-100 from-teal-50 dark:border-teal-900/40 dark:from-teal-950/40",
-    avatar: "from-brand-teal to-brand-teal-dark shadow-teal-200/50",
-    role: "text-brand-teal",
+    card: "border-teal-100 from-teal-50 dark:border-line dark:from-card",
+    avatar: "from-brand-teal to-brand-teal-dark shadow-teal-200/50 dark:shadow-none",
+    role: "text-brand-teal dark:text-brand-pink",
   },
   sky: {
-    card: "border-sky-100 from-sky-50 dark:border-sky-900/40 dark:from-sky-950/40",
-    avatar: "from-sky-400 to-sky-600 shadow-sky-200/50",
-    role: "text-sky-600",
+    card: "border-sky-100 from-sky-50 dark:border-line dark:from-card",
+    avatar: "from-sky-400 to-sky-600 shadow-sky-200/50 dark:from-brand-pink dark:to-brand-pink-dark dark:shadow-none",
+    role: "text-sky-600 dark:text-brand-pink",
   },
   violet: {
-    card: "border-violet-100 from-violet-50 dark:border-violet-900/40 dark:from-violet-950/40",
-    avatar: "from-violet-400 to-violet-600 shadow-violet-200/50",
-    role: "text-violet-600",
+    card: "border-violet-100 from-violet-50 dark:border-line dark:from-card",
+    avatar: "from-violet-400 to-violet-600 shadow-violet-200/50 dark:from-brand-pink dark:to-brand-pink-dark dark:shadow-none",
+    role: "text-violet-600 dark:text-brand-pink",
   },
 };
 
 const roomTones = {
   pink: {
-    art: "from-pink-100 via-pink-50 to-rose-100 dark:from-pink-950 dark:via-rose-950 dark:to-pink-900",
-    badge: "text-brand-pink-dark",
+    art: "from-pink-100 via-pink-50 to-rose-100 dark:from-soft dark:via-soft dark:to-soft",
+    badge: "text-brand-pink-dark dark:text-brand-pink",
   },
   teal: {
-    art: "from-teal-100 via-cyan-50 to-teal-50 dark:from-teal-950 dark:via-cyan-950 dark:to-teal-900",
-    badge: "text-brand-teal-dark",
+    art: "from-teal-100 via-cyan-50 to-teal-50 dark:from-soft dark:via-soft dark:to-soft",
+    badge: "text-brand-teal-dark dark:text-brand-pink",
   },
   violet: {
-    art: "from-violet-100 via-fuchsia-50 to-pink-50 dark:from-violet-950 dark:via-fuchsia-950 dark:to-pink-950",
-    badge: "text-violet-700",
+    art: "from-violet-100 via-fuchsia-50 to-pink-50 dark:from-soft dark:via-soft dark:to-soft",
+    badge: "text-violet-700 dark:text-brand-pink",
   },
 };
 
@@ -129,7 +129,7 @@ export function HomePage({ locale }: { locale: Locale }) {
                       {site.phone}
                     </a>
                   </div>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-pink-light">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-pink-light dark:bg-soft">
                     <svg
                       className="h-6 w-6 text-brand-pink"
                       fill="none"
@@ -147,8 +147,8 @@ export function HomePage({ locale }: { locale: Locale }) {
                   </div>
                 </div>
               </div>
-              <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-pink-200 opacity-40 blur-3xl" />
-              <div className="absolute -bottom-8 -left-8 h-32 w-32 rounded-full bg-teal-200 opacity-40 blur-3xl" />
+              <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-pink-200 opacity-40 blur-3xl dark:hidden" />
+              <div className="absolute -bottom-8 -left-8 h-32 w-32 rounded-full bg-teal-200 opacity-40 blur-3xl dark:hidden" />
             </div>
           </div>
         </div>
@@ -186,7 +186,7 @@ export function HomePage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section id="services" className="bg-gradient-to-b from-pink-50/40 to-page py-20 dark:from-pink-950/25">
+      <section id="services" className="bg-gradient-to-b from-pink-50/40 to-page py-20 dark:bg-page dark:bg-none">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mx-auto mb-14 max-w-2xl text-center">
             <span className="text-sm font-semibold tracking-wider text-brand-pink uppercase">
@@ -273,7 +273,7 @@ export function HomePage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section id="rooms" className="bg-gradient-to-b from-teal-50/30 to-page py-20 dark:from-teal-950/30">
+      <section id="rooms" className="bg-gradient-to-b from-teal-50/30 to-page py-20 dark:bg-page dark:bg-none">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mx-auto mb-14 max-w-2xl text-center">
             <span className="text-sm font-semibold tracking-wider text-brand-teal uppercase">
@@ -322,7 +322,7 @@ export function HomePage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-brand-pink-light via-page to-brand-teal-light py-20 dark:from-pink-950/40 dark:via-page dark:to-teal-950/40">
+      <section className="bg-gradient-to-br from-brand-pink-light via-page to-brand-teal-light py-20 dark:bg-page dark:bg-none">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mx-auto mb-14 max-w-2xl text-center">
             <span className="text-sm font-semibold tracking-wider text-brand-pink uppercase">
@@ -373,7 +373,7 @@ export function HomePage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section id="contacts" className="bg-soft py-20">
+      <section id="contacts" className="bg-soft py-20 dark:bg-page">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mx-auto mb-14 max-w-2xl text-center">
             <span className="text-sm font-semibold tracking-wider text-brand-pink uppercase">
@@ -426,7 +426,8 @@ export function HomePage({ locale }: { locale: Locale }) {
             </div>
 
             <div className="soft-shadow relative flex min-h-[400px] items-center justify-center overflow-hidden rounded-3xl bg-card">
-              <div className="absolute inset-0 bg-gradient-to-br from-pink-100 via-sky-50 to-teal-50 dark:from-pink-950 dark:via-sky-950 dark:to-teal-950" />
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-100 via-sky-50 to-teal-50 dark:hidden" />
+              <div className="absolute inset-0 hidden bg-soft dark:block" />
               <div className="relative z-10 p-8 text-center">
                 <div className="mb-4 text-5xl">📍</div>
                 <div className="mb-2 text-xl font-bold text-ink">ул. Хонка, 164B</div>
@@ -460,7 +461,7 @@ function ContactRow({
 }) {
   return (
     <div className="flex gap-4">
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-pink-light text-brand-pink">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-pink-light text-brand-pink dark:bg-soft">
         •
       </div>
       <div>
