@@ -1,3 +1,4 @@
+import { Logo } from "@/components/brand/Logo";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { footerCopy, nav } from "@/content/copy";
@@ -16,11 +17,7 @@ export function Footer({ locale, compact = false }: FooterProps) {
         <div className="mx-auto max-w-7xl px-4 py-10">
           <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
             <Link href="/">
-              <img
-                src="/logo.jpg"
-                alt="Baby Med"
-                className="h-12 object-contain opacity-90 brightness-0 invert"
-              />
+              <Logo className="h-12 w-auto" />
             </Link>
             <div className="text-center text-sm md:text-right">
               <div>{t(site.addressShort, locale)}</div>
@@ -38,16 +35,12 @@ export function Footer({ locale, compact = false }: FooterProps) {
   }
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer className="bg-[#161113] text-gray-300">
       <div className="mx-auto max-w-7xl px-4 py-12">
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             <div className="mb-5">
-              <img
-                src="/logo.jpg"
-                alt="Baby Med"
-                className="h-14 object-contain opacity-90 brightness-0 invert"
-              />
+              <Logo className="h-14 w-auto" />
             </div>
             <p className="text-sm leading-relaxed text-gray-400">
               {t(footerCopy.about, locale)}

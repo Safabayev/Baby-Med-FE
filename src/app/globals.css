@@ -14,13 +14,13 @@
 }
 
 .dark {
-  --page: oklch(18% 0.02 350);
-  --ink: oklch(96% 0.012 350);
-  --muted: oklch(78% 0.02 350);
-  --card: oklch(23% 0.022 350);
-  --line: oklch(32% 0.03 350);
-  --soft: oklch(22% 0.028 350);
-  --shadow: 0 12px 36px -14px oklch(0% 0 0 / 0.45);
+  --page: oklch(16% 0.016 350);
+  --ink: oklch(96% 0.01 350);
+  --muted: oklch(80% 0.018 350);
+  --card: oklch(21% 0.018 350);
+  --line: oklch(29% 0.022 350);
+  --soft: oklch(19% 0.02 350);
+  --shadow: 0 16px 40px -18px oklch(0% 0 0 / 0.55);
   color-scheme: dark;
 }
 

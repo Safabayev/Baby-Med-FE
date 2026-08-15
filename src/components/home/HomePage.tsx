@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Logo } from "@/components/brand/Logo";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { advantages } from "@/content/advantages";
@@ -119,11 +120,7 @@ export function HomePage({ locale }: { locale: Locale }) {
             <div className="relative">
               <div className="soft-shadow relative z-10 rounded-3xl border border-line bg-card p-8">
                 <div className="flex items-center justify-center py-6">
-                  <img
-                    src="/logo.jpg"
-                    alt="Baby Med"
-                    className="w-full max-w-sm object-contain"
-                  />
+                  <Logo className="w-full max-w-sm" alt="Baby Med" />
                 </div>
                 <div className="mt-2 flex items-center justify-between border-t border-line pt-5">
                   <div>
@@ -389,11 +386,7 @@ export function HomePage({ locale }: { locale: Locale }) {
           <div className="grid gap-10 lg:grid-cols-2">
             <div className="soft-shadow rounded-3xl bg-card p-8">
               <div className="mb-6">
-                <img
-                  src="/logo.jpg"
-                  alt="Baby Med"
-                  className="h-12 rounded-md bg-white object-contain p-0.5"
-                />
+                <Logo className="h-12 w-auto" />
               </div>
               <div className="space-y-5">
                 <ContactRow

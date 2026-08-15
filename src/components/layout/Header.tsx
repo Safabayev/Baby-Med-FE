@@ -6,6 +6,7 @@ import type { Locale } from "@/i18n/routing";
 import { nav } from "@/content/copy";
 import { site } from "@/content/site";
 import { t } from "@/lib/i18n";
+import { Logo } from "@/components/brand/Logo";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { LangSwitch } from "./LangSwitch";
 
@@ -32,11 +33,7 @@ export function Header({ locale }: HeaderProps) {
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex h-16 items-center justify-between md:h-20">
           <Link href="/" className="flex items-center gap-2.5">
-            <img
-              src="/logo.jpg"
-              alt="Baby Med"
-              className="h-12 w-auto rounded-md bg-white object-contain p-0.5 md:h-14"
-            />
+            <Logo className="h-12 w-auto md:h-14" />
           </Link>
 
           <nav className="hidden items-center gap-7 text-sm font-medium lg:flex">
