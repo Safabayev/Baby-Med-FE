@@ -49,6 +49,7 @@ export const hero = {
   statYears: { ru: "Лет опыта", uz: "Yillik tajriba" } satisfies Localized,
   statCare: { ru: "Внимание", uz: "E'tibor" } satisfies Localized,
   hotline: { ru: "Горячая линия", uz: "Ishonch telefoni" } satisfies Localized,
+  artAlt: { ru: "Мама с новорождённым", uz: "Ona va chaqaloq" } satisfies Localized,
 };
 
 export const about = {

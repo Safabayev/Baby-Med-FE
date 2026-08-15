@@ -118,11 +118,15 @@ export function HomePage({ locale }: { locale: Locale }) {
             </div>
 
             <div className="relative">
-              <div className="soft-shadow relative z-10 rounded-3xl border border-line bg-card p-8">
-                <div className="flex items-center justify-center py-6">
-                  <Logo className="w-full max-w-sm" alt="Baby Med" />
+              <div className="soft-shadow relative z-10 overflow-hidden rounded-3xl border border-line bg-card">
+                <div className="flex items-center justify-center px-6 pt-8 pb-4">
+                  <img
+                    src="/hero-mother.png"
+                    alt={t(hero.artAlt, locale)}
+                    className="h-auto w-full max-w-md object-contain dark:invert dark:opacity-90"
+                  />
                 </div>
-                <div className="mt-2 flex items-center justify-between border-t border-line pt-5">
+                <div className="flex items-center justify-between border-t border-line px-8 py-5">
                   <div>
                     <div className="text-sm text-muted">{t(hero.hotline, locale)}</div>
                     <a href={site.phoneHref} className="text-lg font-bold text-brand-pink">
