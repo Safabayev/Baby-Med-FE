@@ -17,10 +17,24 @@ npm run dev
 
 Open http://localhost:3000
 
-- `/` and `/uslugi` — Russian
-- `/uz` and `/uz/uslugi` — Uzbek
+- `/`, `/uslugi`, `/analizy`, `/vrachi`, `/zapis` — Russian
+- `/uz`, `/uz/uslugi`, `/uz/analizy`, `/uz/vrachi`, `/uz/zapis` — Uzbek
+
+## Booking form
+
+`/zapis` (plus the form embedded on the home page) posts to `/api/booking`,
+which validates the submission and appends it to a single Google Sheet.
+Setup and the Apps Script to paste into the sheet: [`docs/booking-sheet.md`](docs/booking-sheet.md).
+
+Requires two environment variables — without them the form tells the visitor
+to call the clinic instead of failing silently:
+
+| Variable | Purpose |
+| --- | --- |
+| `BOOKING_SHEET_WEBHOOK_URL` | Apps Script web app URL of the bookings sheet |
+| `BOOKING_SHEET_TOKEN` | shared secret, must match `SHARED_TOKEN` in the script |
 
 ## Production
 
 Hosted on Netlify from this repository (`npm run build`, publish `.next`).
-The app is **not** a static export, so booking APIs and server actions can be added later.
+The app is **not** a static export, so the booking route runs as a serverless function.

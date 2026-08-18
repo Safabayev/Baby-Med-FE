@@ -79,6 +79,11 @@ export function Footer({ locale, compact = false }: FooterProps) {
                   {t(nav.contacts, locale)}
                 </Link>
               </li>
+              <li>
+                <Link href="/zapis" className="font-semibold text-brand-pink transition hover:text-brand-pink-dark">
+                  {t(nav.book, locale)}
+                </Link>
+              </li>
             </ul>
           </div>
           <div>

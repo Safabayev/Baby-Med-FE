@@ -25,6 +25,14 @@ export const meta = {
     ru: "Прайскурант лаборатории Baby Med в Ургенче: общий анализ крови, биохимия, анализы мочи, коагулограмма, гепатиты B и C, RW.",
     uz: "Urganchdagi Baby Med laboratoriyasi prayskuranti: umumiy qon tahlili, biokimyo, siydik tahlili, koagulogramma, gepatit B va S, RW.",
   } satisfies Localized,
+  bookingTitle: {
+    ru: "Записаться на приём — Baby Med | Ургенч",
+    uz: "Qabulga yozilish — Baby Med | Urganch",
+  } satisfies Localized,
+  bookingDescription: {
+    ru: "Онлайн-запись в клинику Baby Med в Ургенче. Оставьте заявку — администратор перезвонит и подтвердит удобное время.",
+    uz: "Urganchdagi Baby Med klinikasiga onlayn yozilish. Ariza qoldiring — administrator qo'ng'iroq qilib, qulay vaqtni tasdiqlaydi.",
+  } satisfies Localized,
   doctorsTitle: {
     ru: "Врачи клиники — Baby Med | Ургенч",
     uz: "Klinika shifokorlari — Baby Med | Urganch",

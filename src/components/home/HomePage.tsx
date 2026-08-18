@@ -1,15 +1,18 @@
 import type { ReactNode } from "react";
 import { Logo } from "@/components/brand/Logo";
+import { BookingForm } from "@/components/booking/BookingForm";
 import { DoctorCard } from "@/components/doctors/DoctorCard";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { advantages } from "@/content/advantages";
+import { bookingForm } from "@/content/booking";
 import {
   about,
   contactsBlock,
   ctaBlock,
   doctorsBlock,
   hero,
+  nav,
   pricesPage,
   roomsBlock,
   servicesBlock,
@@ -71,12 +74,12 @@ export function HomePage({ locale }: { locale: Locale }) {
                 {t(hero.lead, locale)}
               </p>
               <div className="flex flex-col gap-4 sm:flex-row">
-                <a
-                  href={site.phoneHref}
+                <Link
+                  href="/zapis"
                   className="inline-flex items-center justify-center rounded-2xl bg-brand-pink px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-pink-200/60 transition hover:bg-brand-pink-dark"
                 >
                   {t(hero.book, locale)}
-                </a>
+                </Link>
                 <Link
                   href="/uslugi"
                   className="inline-flex items-center justify-center rounded-2xl border border-line bg-card px-8 py-4 text-lg font-semibold text-brand-pink transition hover:bg-soft"
@@ -346,24 +349,18 @@ export function HomePage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section className="py-16">
+      <section id="booking" className="py-16">
         <div className="mx-auto max-w-5xl px-4">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-brand-pink to-brand-pink-dark p-10 text-center text-white md:p-14">
-            <div className="absolute top-0 right-0 h-64 w-64 translate-x-1/2 -translate-y-1/2 rounded-full bg-white/10" />
-            <div className="absolute bottom-0 left-0 h-48 w-48 -translate-x-1/2 translate-y-1/2 rounded-full bg-white/10" />
-            <div className="relative z-10">
-              <h2 className="mb-4 text-3xl font-bold md:text-4xl">{t(ctaBlock.title, locale)}</h2>
-              <p className="mx-auto mb-8 max-w-xl text-lg text-pink-100">
-                {t(ctaBlock.lead, locale)}
-              </p>
-              <a
-                href={site.phoneHref}
-                className="inline-flex items-center justify-center rounded-2xl bg-white px-8 py-4 text-lg font-bold text-brand-pink-dark transition hover:bg-pink-50 dark:bg-card dark:text-brand-pink dark:hover:bg-soft"
-              >
-                {site.phone}
-              </a>
-            </div>
+          <div className="mx-auto mb-10 max-w-2xl text-center">
+            <span className="text-sm font-semibold tracking-wider text-brand-pink uppercase">
+              {t(bookingForm.kicker, locale)}
+            </span>
+            <h2 className="mt-3 mb-4 text-3xl font-bold text-ink md:text-4xl">
+              {t(ctaBlock.title, locale)}
+            </h2>
+            <p className="text-muted">{t(ctaBlock.lead, locale)}</p>
           </div>
+          <BookingForm locale={locale} />
         </div>
       </section>
 
@@ -432,10 +429,16 @@ export function HomePage({ locale }: { locale: Locale }) {
                   }
                 />
               </div>
-              <div className="mt-8 border-t border-line pt-6">
+              <div className="mt-8 space-y-3 border-t border-line pt-6">
+                <Link
+                  href="/zapis"
+                  className="block w-full rounded-xl bg-brand-pink py-3.5 text-center font-semibold text-white transition hover:bg-brand-pink-dark"
+                >
+                  {t(nav.book, locale)}
+                </Link>
                 <a
                   href={site.phoneHref}
-                  className="block w-full rounded-xl bg-brand-pink py-3.5 text-center font-semibold text-white transition hover:bg-brand-pink-dark"
+                  className="block w-full rounded-xl border border-line py-3.5 text-center font-semibold text-brand-pink transition hover:bg-soft"
                 >
                   {t(contactsBlock.callNow, locale)}
                 </a>

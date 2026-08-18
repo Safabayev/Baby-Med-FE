@@ -50,12 +50,12 @@ export function LabPricesPage({ locale }: { locale: Locale }) {
 
       <section className="py-12">
         <div className="mx-auto max-w-4xl px-4 text-center">
-          <a
-            href={site.phoneHref}
+          <Link
+            href="/zapis"
             className="inline-flex items-center justify-center rounded-2xl bg-brand-pink px-10 py-4 text-lg font-bold text-white shadow-xl shadow-pink-200/50 transition hover:bg-brand-pink-dark"
           >
             {t(pricesPage.book, locale)}
-          </a>
+          </Link>
           <p className="mt-4 text-sm text-muted">{site.phone}</p>
         </div>
       </section>

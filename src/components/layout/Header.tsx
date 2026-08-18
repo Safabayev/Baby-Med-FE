@@ -58,12 +58,12 @@ export function Header({ locale }: HeaderProps) {
           <div className="flex items-center gap-3">
             <ThemeToggle locale={locale} />
             <LangSwitch locale={locale} />
-            <a
-              href={site.phoneHref}
+            <Link
+              href="/zapis"
               className="hidden items-center gap-2 rounded-full bg-brand-pink px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-pink-200/50 transition hover:bg-brand-pink-dark sm:inline-flex"
             >
               {t(nav.book, locale)}
-            </a>
+            </Link>
             <button
               type="button"
               className="rounded-lg p-2 hover:bg-soft lg:hidden"
@@ -118,9 +118,16 @@ export function Header({ locale }: HeaderProps) {
                 {t(link.label, locale)}
               </Link>
             ))}
+            <Link
+              href="/zapis"
+              className="mt-2 block w-full rounded-xl bg-brand-pink py-3 text-center font-semibold text-white"
+              onClick={() => setOpen(false)}
+            >
+              {t(nav.book, locale)}
+            </Link>
             <a
               href={site.phoneHref}
-              className="mt-2 block w-full rounded-xl bg-brand-pink py-3 text-center font-semibold text-white"
+              className="mt-2 block w-full rounded-xl border border-line py-3 text-center font-semibold text-brand-pink"
             >
               {t(nav.call, locale)}
             </a>
