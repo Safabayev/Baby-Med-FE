@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Logo } from "@/components/brand/Logo";
+import { DoctorCard } from "@/components/doctors/DoctorCard";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { advantages } from "@/content/advantages";
@@ -9,13 +10,14 @@ import {
   ctaBlock,
   doctorsBlock,
   hero,
+  pricesPage,
   roomsBlock,
   servicesBlock,
   whyBlock,
 } from "@/content/copy";
-import { doctors } from "@/content/doctors";
+import { featuredDoctors } from "@/content/doctors";
 import { rooms } from "@/content/rooms";
-import { site } from "@/content/site";
+import { priceValidFrom, site } from "@/content/site";
 import { t } from "@/lib/i18n";
 
 const cardTones = {
@@ -26,29 +28,6 @@ const cardTones = {
   rose: "bg-pink-100 dark:bg-soft",
   emerald: "bg-emerald-100 dark:bg-soft",
   violet: "bg-violet-100 dark:bg-soft",
-};
-
-const doctorTones = {
-  pink: {
-    card: "border-pink-100 from-pink-50 dark:border-line dark:from-card",
-    avatar: "from-brand-pink to-brand-pink-dark shadow-pink-200/50 dark:shadow-none",
-    role: "text-brand-pink",
-  },
-  teal: {
-    card: "border-teal-100 from-teal-50 dark:border-line dark:from-card",
-    avatar: "from-brand-teal to-brand-teal-dark shadow-teal-200/50 dark:shadow-none",
-    role: "text-brand-teal dark:text-brand-pink",
-  },
-  sky: {
-    card: "border-sky-100 from-sky-50 dark:border-line dark:from-card",
-    avatar: "from-sky-400 to-sky-600 shadow-sky-200/50 dark:from-brand-pink dark:to-brand-pink-dark dark:shadow-none",
-    role: "text-sky-600 dark:text-brand-pink",
-  },
-  violet: {
-    card: "border-violet-100 from-violet-50 dark:border-line dark:from-card",
-    avatar: "from-violet-400 to-violet-600 shadow-violet-200/50 dark:from-brand-pink dark:to-brand-pink-dark dark:shadow-none",
-    role: "text-violet-600 dark:text-brand-pink",
-  },
 };
 
 const roomTones = {
@@ -63,6 +42,10 @@ const roomTones = {
   violet: {
     art: "from-violet-100 via-fuchsia-50 to-pink-50 dark:from-soft dark:via-soft dark:to-soft",
     badge: "text-violet-700 dark:text-brand-pink",
+  },
+  amber: {
+    art: "from-amber-100 via-orange-50 to-pink-50 dark:from-soft dark:via-soft dark:to-soft",
+    badge: "text-amber-700 dark:text-brand-pink",
   },
 };
 
@@ -107,8 +90,8 @@ export function HomePage({ locale }: { locale: Locale }) {
                   <div className="mt-1 text-sm text-muted">{t(hero.stat247, locale)}</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-brand-teal">8+</div>
-                  <div className="mt-1 text-sm text-muted">{t(hero.statYears, locale)}</div>
+                  <div className="text-3xl font-bold text-brand-teal">20+</div>
+                  <div className="mt-1 text-sm text-muted">{t(hero.statDoctors, locale)}</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-brand-pink">100%</div>
@@ -223,12 +206,18 @@ export function HomePage({ locale }: { locale: Locale }) {
               </div>
             ))}
           </div>
-          <div className="mt-10 text-center">
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/uslugi"
               className="inline-flex items-center gap-2 rounded-2xl bg-brand-teal px-8 py-3.5 font-semibold text-white shadow-lg shadow-teal-200/40 transition hover:bg-brand-teal-dark"
             >
               {t(servicesBlock.allPrices, locale)}
+            </Link>
+            <Link
+              href="/analizy"
+              className="inline-flex items-center gap-2 rounded-2xl border border-line bg-card px-8 py-3.5 font-semibold text-brand-pink transition hover:bg-soft"
+            >
+              {t(servicesBlock.allLabs, locale)}
             </Link>
           </div>
         </div>
@@ -246,33 +235,17 @@ export function HomePage({ locale }: { locale: Locale }) {
             <p className="text-muted">{t(doctorsBlock.lead, locale)}</p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {doctors.map((doctor) => {
-              const tone = doctorTones[doctor.tone];
-              return (
-                <div
-                  key={doctor.initials}
-                  className={`card-hover rounded-2xl border bg-gradient-to-b to-card p-6 text-center ${tone.card}`}
-                >
-                  <div
-                    className={`mx-auto mb-5 flex h-28 w-28 items-center justify-center rounded-full bg-gradient-to-br text-3xl font-bold text-white shadow-lg ${tone.avatar}`}
-                  >
-                    {doctor.initials}
-                  </div>
-                  <h3 className="text-lg leading-snug font-bold text-ink">
-                    {doctor.nameLines[0]}
-                    <br />
-                    {doctor.nameLines[1]}
-                  </h3>
-                  <p className={`mt-2 text-sm font-medium ${tone.role}`}>
-                    {t(doctor.role, locale)}
-                  </p>
-                  <p className="mt-1 text-sm text-muted">{t(doctor.experience, locale)}</p>
-                  {doctor.note ? (
-                    <p className="mt-3 text-xs text-muted">{t(doctor.note, locale)}</p>
-                  ) : null}
-                </div>
-              );
-            })}
+            {featuredDoctors.map((doctor) => (
+              <DoctorCard key={doctor.id} doctor={doctor} locale={locale} />
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link
+              href="/vrachi"
+              className="inline-flex items-center gap-2 rounded-2xl border border-line bg-card px-8 py-3.5 font-semibold text-brand-pink transition hover:bg-soft"
+            >
+              {t(doctorsBlock.all, locale)}
+            </Link>
           </div>
         </div>
       </section>
@@ -288,7 +261,7 @@ export function HomePage({ locale }: { locale: Locale }) {
             </h2>
             <p className="text-muted">{t(roomsBlock.lead, locale)}</p>
           </div>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {rooms.map((room) => {
               const tone = roomTones[room.tone];
               return (
@@ -312,6 +285,12 @@ export function HomePage({ locale }: { locale: Locale }) {
                     <h3 className="mb-2 text-lg font-bold text-ink">
                       {t(room.title, locale)}
                     </h3>
+                    <div className="mb-4 flex items-baseline gap-1.5">
+                      <span className="text-xl font-bold text-brand-pink">{room.price}</span>
+                      <span className="text-sm text-muted">
+                        {t(pricesPage.currency, locale)} / {t(roomsBlock.perDay, locale)}
+                      </span>
+                    </div>
                     <p className="mb-4 text-sm text-muted">{t(room.text, locale)}</p>
                     <ul className="space-y-1 text-sm text-muted">
                       {room.features.map((feature) => (
@@ -322,6 +301,17 @@ export function HomePage({ locale }: { locale: Locale }) {
                 </div>
               );
             })}
+          </div>
+          <div className="mt-10 text-center">
+            <Link
+              href="/uslugi"
+              className="inline-flex items-center gap-2 rounded-2xl bg-brand-teal px-8 py-3.5 font-semibold text-white shadow-lg shadow-teal-200/40 transition hover:bg-brand-teal-dark"
+            >
+              {t(roomsBlock.allPrices, locale)}
+            </Link>
+            <p className="mt-4 text-sm text-muted">
+              {t(pricesPage.validFrom, locale)} {priceValidFrom}
+            </p>
           </div>
         </div>
       </section>
@@ -418,6 +408,29 @@ export function HomePage({ locale }: { locale: Locale }) {
                   label={t(contactsBlock.hours, locale)}
                   value={t(site.hours, locale)}
                 />
+                <ContactRow
+                  label={t(contactsBlock.social, locale)}
+                  value={
+                    <span className="flex flex-wrap gap-x-4 gap-y-1">
+                      <a
+                        href={site.instagramUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-brand-pink hover:underline"
+                      >
+                        Instagram @{site.instagram}
+                      </a>
+                      <a
+                        href={site.telegramUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-brand-pink hover:underline"
+                      >
+                        Telegram
+                      </a>
+                    </span>
+                  }
+                />
               </div>
               <div className="mt-8 border-t border-line pt-6">
                 <a
@@ -434,7 +447,9 @@ export function HomePage({ locale }: { locale: Locale }) {
               <div className="absolute inset-0 hidden bg-soft dark:block" />
               <div className="relative z-10 p-8 text-center">
                 <div className="mb-4 text-5xl">📍</div>
-                <div className="mb-2 text-xl font-bold text-ink">ул. Хонка, 164B</div>
+                <div className="mb-2 text-xl font-bold text-ink">
+                  {t(site.addressStreet, locale)}
+                </div>
                 <div className="mb-1 text-muted">{t(site.region, locale)}</div>
                 <div className="mb-6 text-sm text-muted">{t(site.landmark, locale)}</div>
                 <a

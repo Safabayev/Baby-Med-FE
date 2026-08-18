@@ -17,13 +17,13 @@ type HeaderProps = {
 export function Header({ locale }: HeaderProps) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const onPrices = pathname === "/uslugi";
 
   const links = [
     { href: "/#about", label: nav.about, hash: true },
     { href: "/#services", label: nav.services, hash: true },
     { href: "/uslugi", label: nav.prices, hash: false },
-    { href: "/#doctors", label: nav.doctors, hash: true },
+    { href: "/analizy", label: nav.labs, hash: false },
+    { href: "/vrachi", label: nav.doctors, hash: false },
     { href: "/#rooms", label: nav.rooms, hash: true },
     { href: "/#contacts", label: nav.contacts, hash: true },
   ];
@@ -36,9 +36,9 @@ export function Header({ locale }: HeaderProps) {
             <Logo className="h-12 w-auto md:h-14" />
           </Link>
 
-          <nav className="hidden items-center gap-7 text-sm font-medium lg:flex">
+          <nav className="hidden items-center gap-5 text-sm font-medium lg:flex xl:gap-7">
             {links.map((link) => {
-              const active = !link.hash && onPrices && link.href === "/uslugi";
+              const active = !link.hash && pathname === link.href;
               return (
                 <Link
                   key={link.href}

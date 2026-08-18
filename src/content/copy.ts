@@ -6,16 +6,32 @@ export const meta = {
     uz: "Baby Med — Xususiy tug'ruqxona va bolalar klinikasi | Urganch",
   } satisfies Localized,
   homeDescription: {
-    ru: "Частный родильный дом и детская клиника Baby Med в Ургенче. Комфортные роды, неонатология, гинекология, УЗИ. Круглосуточно. ул. Хонка, 164B",
-    uz: "Urganchdagi xususiy tug'ruqxona va bolalar klinikasi Baby Med. Qulay tug'ruq, neonatologiya, ginekologiya, UZI. Kecha-kunduz. Xonqa ko'chasi, 164B",
+    ru: "Частный родильный дом и детская клиника Baby Med в Ургенче. Роды, кесарево сечение, неонатология, педиатрия, гинекология, УЗД, лаборатория. Круглосуточно. ул. Ханкинская, 164",
+    uz: "Urganchdagi xususiy tug'ruqxona va bolalar klinikasi Baby Med. Tug'ruq, keser kesish, neonatologiya, pediatriya, ginekologiya, UZD, laboratoriya. Kecha-kunduz. Xonqa ko'chasi, 164",
   } satisfies Localized,
   pricesTitle: {
     ru: "Услуги и цены — Baby Med | Ургенч",
     uz: "Xizmatlar va narxlar — Baby Med | Urganch",
   } satisfies Localized,
   pricesDescription: {
-    ru: "Прайс-лист услуг частного роддома Baby Med в Ургенче. Ведение беременности, роды, неонатология, гинекология, УЗИ.",
-    uz: "Urganchdagi Baby Med xususiy tug'ruqxonasi xizmatlari narxlari. Homiladorlik, tug'ruq, neonatologiya, ginekologiya, UZI.",
+    ru: "Прайс-лист клиники Baby Med в Ургенче: естественные роды, кесарево сечение, реанимация, палаты. Цены на 01.07.2026.",
+    uz: "Urganchdagi Baby Med klinikasi narxlari: tabiiy tug'ruq, keser kesish, reanimatsiya, palatalar. 01.07.2026 holatiga narxlar.",
+  } satisfies Localized,
+  labTitle: {
+    ru: "Лабораторные анализы и цены — Baby Med | Ургенч",
+    uz: "Laboratoriya tahlillari va narxlari — Baby Med | Urganch",
+  } satisfies Localized,
+  labDescription: {
+    ru: "Прайскурант лаборатории Baby Med в Ургенче: общий анализ крови, биохимия, анализы мочи, коагулограмма, гепатиты B и C, RW.",
+    uz: "Urganchdagi Baby Med laboratoriyasi prayskuranti: umumiy qon tahlili, biokimyo, siydik tahlili, koagulogramma, gepatit B va S, RW.",
+  } satisfies Localized,
+  doctorsTitle: {
+    ru: "Врачи клиники — Baby Med | Ургенч",
+    uz: "Klinika shifokorlari — Baby Med | Urganch",
+  } satisfies Localized,
+  doctorsDescription: {
+    ru: "Врачи Baby Med в Ургенче: гинекологи, неонатологи, педиатры, врачи УЗД, анестезиолог. Контактные телефоны специалистов.",
+    uz: "Urganchdagi Baby Med shifokorlari: ginekologlar, neonatologlar, pediatrlar, UZD shifokorlari, anesteziolog. Mutaxassislar telefonlari.",
   } satisfies Localized,
 };
 
@@ -23,6 +39,7 @@ export const nav = {
   about: { ru: "О клинике", uz: "Klinika haqida" } satisfies Localized,
   services: { ru: "Услуги", uz: "Xizmatlar" } satisfies Localized,
   prices: { ru: "Цены", uz: "Narxlar" } satisfies Localized,
+  labs: { ru: "Анализы", uz: "Tahlillar" } satisfies Localized,
   doctors: { ru: "Врачи", uz: "Shifokorlar" } satisfies Localized,
   rooms: { ru: "Палаты", uz: "Palatalar" } satisfies Localized,
   contacts: { ru: "Контакты", uz: "Aloqa" } satisfies Localized,
@@ -47,6 +64,7 @@ export const hero = {
   prices: { ru: "Услуги и цены", uz: "Xizmatlar va narxlar" } satisfies Localized,
   stat247: { ru: "Круглосуточно", uz: "Kecha-kunduz" } satisfies Localized,
   statYears: { ru: "Лет опыта", uz: "Yillik tajriba" } satisfies Localized,
+  statDoctors: { ru: "Специалистов", uz: "Mutaxassis" } satisfies Localized,
   statCare: { ru: "Внимание", uz: "E'tibor" } satisfies Localized,
   hotline: { ru: "Горячая линия", uz: "Ishonch telefoni" } satisfies Localized,
   artAlt: { ru: "Мама с новорождённым", uz: "Ona va chaqaloq" } satisfies Localized,
@@ -63,12 +81,12 @@ export const about = {
     uz: "Xususiy tug'ruq majmuasi Baby Med 2018-yildan beri Urganchda faoliyat yuritadi. Biz bo'lajak onalar va yangi tug'ilgan chaqaloqlar uchun qulay va xavfsiz muhit yaratdik.",
   } satisfies Localized,
   p2: {
-    ru: "В нашей клинике работают опытные специалисты: гинекологи, неонатологи и врачи УЗИ. Руководит клиникой Собирова Нигора Ахмедовна — неонатолог с 37-летним стажем.",
-    uz: "Klinikamizda tajribali mutaxassislar ishlaydi: ginekologlar, neonatologlar va UZI shifokorlari. Klinikani Sobirova Nigora Axmedovna — 37 yillik tajribaga ega neonatolog boshqaradi.",
+    ru: "В клинике работают более 20 специалистов: гинекологи, неонатологи, педиатры, врачи УЗД, анестезиолог и акушерки. Главный врач клиники — Матназаров Улугбек.",
+    uz: "Klinikada 20 dan ortiq mutaxassis ishlaydi: ginekologlar, neonatologlar, pediatrlar, UZD shifokorlari, anesteziolog va akusherkalar. Klinikaning bosh shifokori — Matnazarov Ulug'bek.",
   } satisfies Localized,
   p3: {
-    ru: "Мы принимаем роды, ведём беременность, оказываем помощь новорождённым и проводим гинекологические консультации в тёплой, спокойной атмосфере.",
-    uz: "Biz tug'ruqlarni qabul qilamiz, homiladorlikni kuzatamiz, yangi tug'ilgan chaqaloqlarga yordam beramiz va issiq, tinch muhitda ginekologik maslahatlar o'tkazamiz.",
+    ru: "Мы принимаем естественные роды и проводим операции кесарева сечения, ведём беременность, наблюдаем новорождённых, оказываем педиатрическую помощь и выполняем лабораторные анализы — в собственной лаборатории клиники.",
+    uz: "Biz tabiiy tug'ruqlarni qabul qilamiz va keser kesish amaliyotlarini o'tkazamiz, homiladorlikni kuzatamiz, yangi tug'ilgan chaqaloqlarni nazorat qilamiz, pediatrik yordam ko'rsatamiz va klinikaning o'z laboratoriyasida tahlillarni bajaramiz.",
   } satisfies Localized,
   cards: [
     {
@@ -92,8 +110,8 @@ export const about = {
     {
       icon: "🔬",
       tone: "amber" as const,
-      title: { ru: "УЗИ-диагностика", uz: "UZI diagnostikasi" } satisfies Localized,
-      text: { ru: "Современное оборудование", uz: "Zamonaviy uskunalar" } satisfies Localized,
+      title: { ru: "Лаборатория", uz: "Laboratoriya" } satisfies Localized,
+      text: { ru: "Анализы на месте, без ожидания", uz: "Tahlillar joyida, kutishsiz" } satisfies Localized,
     },
   ],
 };
@@ -105,12 +123,16 @@ export const servicesBlock = {
     uz: "Ona va bola salomatligi uchun hamma narsa",
   } satisfies Localized,
   lead: {
-    ru: "Мы оказываем полный спектр услуг в сфере акушерства, гинекологии и неонатологии",
-    uz: "Biz akusherlik, ginekologiya va neonatologiya sohasida to'liq xizmatlar spektrini taqdim etamiz",
+    ru: "Акушерство, гинекология, неонатология, педиатрия, УЗД и собственная лаборатория — в одном месте",
+    uz: "Akusherlik, ginekologiya, neonatologiya, pediatriya, UZD va o'z laboratoriyasi — bir joyda",
   } satisfies Localized,
   allPrices: {
     ru: "Смотреть все услуги и цены →",
     uz: "Barcha xizmatlar va narxlarni ko'rish →",
+  } satisfies Localized,
+  allLabs: {
+    ru: "Прайс лаборатории →",
+    uz: "Laboratoriya narxlari →",
   } satisfies Localized,
   items: [
     {
@@ -127,12 +149,23 @@ export const servicesBlock = {
     {
       icon: "🏥",
       tone: "rose" as const,
-      title: { ru: "Роды", uz: "Tug'ruq" } satisfies Localized,
+      title: { ru: "Естественные роды", uz: "Tabiiy tug'ruq" } satisfies Localized,
       points: [
         { ru: "Физиологические роды", uz: "Fiziologik tug'ruq" },
         { ru: "Индивидуальные родовые залы", uz: "Individual tug'ruq zallari" },
-        { ru: "Партнёрские роды", uz: "Hamkorlikdagi tug'ruq" },
+        { ru: "Круглосуточная бригада", uz: "Kecha-kunduz navbatchi brigada" },
         { ru: "Послеродовое наблюдение", uz: "Tug'ruqdan keyingi kuzatuv" },
+      ] satisfies Localized[],
+    },
+    {
+      icon: "🩺",
+      tone: "violet" as const,
+      title: { ru: "Кесарево сечение", uz: "Keser kesish amaliyoti" } satisfies Localized,
+      points: [
+        { ru: "Первичное кесарево сечение", uz: "Birlamchi keser kesish amaliyoti" },
+        { ru: "Повторное кесарево сечение", uz: "Ikkilamchi keser kesish amaliyoti" },
+        { ru: "Работа штатного анестезиолога", uz: "Shtatdagi anesteziolog ishtiroki" },
+        { ru: "Наблюдение после операции", uz: "Amaliyotdan keyingi kuzatuv" },
       ] satisfies Localized[],
     },
     {
@@ -144,6 +177,17 @@ export const servicesBlock = {
         { ru: "Первичный уход за малышом", uz: "Chaqaloqqa birlamchi parvarish" },
         { ru: "Консультации по грудному вскармливанию", uz: "Ko'krak suti bilan ovqatlantirish bo'yicha maslahat" },
         { ru: "Наблюдение в первые дни жизни", uz: "Hayotning dastlabki kunlarida kuzatuv" },
+      ] satisfies Localized[],
+    },
+    {
+      icon: "🧸",
+      tone: "sky" as const,
+      title: { ru: "Педиатрия", uz: "Pediatriya" } satisfies Localized,
+      points: [
+        { ru: "Приём детей всех возрастов", uz: "Barcha yoshdagi bolalarni qabul qilish" },
+        { ru: "Профилактические осмотры", uz: "Profilaktik ko'riklar" },
+        { ru: "Лечение детских заболеваний", uz: "Bolalar kasalliklarini davolash" },
+        { ru: "Дежурные педиатры круглосуточно", uz: "Kecha-kunduz navbatchi pediatrlar" },
       ] satisfies Localized[],
     },
     {
@@ -159,8 +203,8 @@ export const servicesBlock = {
     },
     {
       icon: "📡",
-      tone: "violet" as const,
-      title: { ru: "УЗИ-диагностика", uz: "UZI diagnostikasi" } satisfies Localized,
+      tone: "amber" as const,
+      title: { ru: "УЗД-диагностика", uz: "UZD diagnostikasi" } satisfies Localized,
       points: [
         { ru: "УЗИ органов малого таза", uz: "Kichik tos a'zolari UZIsi" },
         { ru: "Акушерское УЗИ", uz: "Akusherlik UZIsi" },
@@ -169,14 +213,28 @@ export const servicesBlock = {
       ] satisfies Localized[],
     },
     {
-      icon: "💝",
-      tone: "amber" as const,
-      title: { ru: "Послеродовой период", uz: "Tug'ruqdan keyingi davr" } satisfies Localized,
+      icon: "🔬",
+      tone: "pink" as const,
+      title: { ru: "Лабораторная диагностика", uz: "Laboratoriya diagnostikasi" } satisfies Localized,
       points: [
-        { ru: "Наблюдение за мамой", uz: "Onani kuzatish" },
-        { ru: "Восстановление после родов", uz: "Tug'ruqdan keyin tiklanish" },
-        { ru: "Консультации по уходу", uz: "Parvarish bo'yicha maslahatlar" },
-        { ru: "Поддержка в первые недели", uz: "Dastlabki haftalarda qo'llab-quvvatlash" },
+        { ru: "Общий анализ крови и мочи", uz: "Umumiy qon va siydik tahlili" },
+        { ru: "Биохимия крови", uz: "Qon biokimyosi" },
+        { ru: "Коагулограмма, ПТИ, МНО", uz: "Koagulogramma, PTI, MNO" },
+        { ru: "Гепатиты B и C, RW", uz: "Gepatit B va S, RW" },
+      ] satisfies Localized[],
+    },
+    {
+      icon: "🫀",
+      tone: "teal" as const,
+      title: {
+        ru: "Реанимация и интенсивная терапия",
+        uz: "Reanimatsiya va intensiv terapiya",
+      } satisfies Localized,
+      points: [
+        { ru: "Реанимационная палата", uz: "Reanimatsiya palatasi" },
+        { ru: "Круглосуточное наблюдение", uz: "Kecha-kunduz kuzatuv" },
+        { ru: "Поддержка мамы и новорождённого", uz: "Ona va chaqaloqni qo'llab-quvvatlash" },
+        { ru: "Помощь анестезиолога", uz: "Anesteziolog yordami" },
       ] satisfies Localized[],
     },
   ],
@@ -186,8 +244,26 @@ export const doctorsBlock = {
   kicker: { ru: "Команда", uz: "Jamoa" } satisfies Localized,
   title: { ru: "Наши врачи", uz: "Bizning shifokorlarimiz" } satisfies Localized,
   lead: {
-    ru: "Опытные специалисты, которым можно доверить самое дорогое",
-    uz: "Eng qimmat narsani ishonib topshirish mumkin bo'lgan tajribali mutaxassislar",
+    ru: "Более 20 специалистов: гинекологи, неонатологи, педиатры, врачи УЗД и анестезиолог",
+    uz: "20 dan ortiq mutaxassis: ginekologlar, neonatologlar, pediatrlar, UZD shifokorlari va anesteziolog",
+  } satisfies Localized,
+  all: {
+    ru: "Все врачи и телефоны →",
+    uz: "Barcha shifokorlar va telefonlar →",
+  } satisfies Localized,
+};
+
+export const doctorsPage = {
+  kicker: { ru: "Команда", uz: "Jamoa" } satisfies Localized,
+  title: { ru: "Врачи клиники", uz: "Klinika shifokorlari" } satisfies Localized,
+  lead: {
+    ru: "Полный состав специалистов Baby Med с прямыми контактными телефонами. Записаться также можно через call-центр клиники.",
+    uz: "Baby Med mutaxassislarining to'liq tarkibi va to'g'ridan-to'g'ri telefon raqamlari. Yozilish klinikaning call markazi orqali ham mumkin.",
+  } satisfies Localized,
+  callDoctor: { ru: "Позвонить врачу", uz: "Shifokorga qo'ng'iroq qilish" } satisfies Localized,
+  note: {
+    ru: "Прямые номера предназначены для связи с конкретным специалистом. Если врач занят, звоните в call-центр:",
+    uz: "To'g'ridan-to'g'ri raqamlar aniq mutaxassis bilan bog'lanish uchun. Shifokor band bo'lsa, call markazga qo'ng'iroq qiling:",
   } satisfies Localized,
 };
 
@@ -195,9 +271,11 @@ export const roomsBlock = {
   kicker: { ru: "Палаты", uz: "Palatalar" } satisfies Localized,
   title: { ru: "Комфорт для мамы и малыша", uz: "Ona va chaqaloq uchun qulaylik" } satisfies Localized,
   lead: {
-    ru: "Уютные палаты, созданные для спокойного восстановления",
-    uz: "Tinch tiklanish uchun yaratilgan qulay palatalar",
+    ru: "Двухместные стандартные палаты, полулюкс и люкс — в старом и новом корпусах",
+    uz: "Ikki kishilik standart palatalar, pol-lyuks va lyuks — eski va yangi binolarda",
   } satisfies Localized,
+  perDay: { ru: "за сутки", uz: "bir kunga" } satisfies Localized,
+  allPrices: { ru: "Все цены на палаты →", uz: "Palatalarning barcha narxlari →" } satisfies Localized,
 };
 
 export const whyBlock = {
@@ -222,6 +300,7 @@ export const contactsBlock = {
   address: { ru: "Адрес", uz: "Manzil" } satisfies Localized,
   phone: { ru: "Телефон", uz: "Telefon" } satisfies Localized,
   hours: { ru: "Режим работы", uz: "Ish vaqti" } satisfies Localized,
+  social: { ru: "Соцсети", uz: "Ijtimoiy tarmoqlar" } satisfies Localized,
   callNow: { ru: "Позвонить сейчас", uz: "Hozir qo'ng'iroq qilish" } satisfies Localized,
   openMap: { ru: "Открыть на карте", uz: "Xaritada ochish" } satisfies Localized,
 };
@@ -240,13 +319,40 @@ export const pricesPage = {
   kicker: { ru: "Прайс-лист", uz: "Narxlar ro'yxati" } satisfies Localized,
   title: { ru: "Услуги и цены", uz: "Xizmatlar va narxlar" } satisfies Localized,
   lead: {
-    ru: "Актуальные цены на услуги клиники Baby Med. Окончательная стоимость уточняется при записи.",
-    uz: "Baby Med klinikasi xizmatlarining joriy narxlari. Yakuniy narx yozilishda aniqlashtiriladi.",
+    ru: "Стоимость медицинских услуг клиники Baby Med. Оплата палаты за роды и кесарево сечение считается отдельно.",
+    uz: "Baby Med klinikasi tibbiy xizmatlari narxi. Tug'ruq va keser kesish uchun palata to'lovi alohida hisoblanadi.",
+  } satisfies Localized,
+  currency: { ru: "сум", uz: "so'm" } satisfies Localized,
+  validFrom: {
+    ru: "Цены актуальны на",
+    uz: "Narxlar quyidagi sana holatiga ko'ra",
   } satisfies Localized,
   note: {
-    ru: "Цены указаны ориентировочно и могут отличаться в зависимости от индивидуальных особенностей. Точную стоимость уточняйте по телефону.",
-    uz: "Narxlar taxminiy ko'rsatilgan va individual xususiyatlarga qarab farq qilishi mumkin. Aniq narxni telefon orqali aniqlashtiring.",
+    ru: "Окончательная стоимость зависит от длительности пребывания, выбранной палаты и индивидуальных назначений. Точную сумму уточняйте по телефону:",
+    uz: "Yakuniy narx qolish muddati, tanlangan palata va individual tayinlovlarga bog'liq. Aniq summani telefon orqali aniqlashtiring:",
   } satisfies Localized,
   noteStrong: { ru: "Важно:", uz: "Muhim:" } satisfies Localized,
   book: { ru: "Записаться / Уточнить цену", uz: "Yozilish / Narxni aniqlashtirish" } satisfies Localized,
+  toLab: {
+    ru: "Цены на лабораторные анализы →",
+    uz: "Laboratoriya tahlillari narxlari →",
+  } satisfies Localized,
+};
+
+export const labPage = {
+  kicker: { ru: "Лаборатория", uz: "Laboratoriya" } satisfies Localized,
+  title: { ru: "Лабораторные анализы", uz: "Laboratoriya tahlillari" } satisfies Localized,
+  lead: {
+    ru: "Прайскурант анализов, выполняемых в собственной лаборатории клиники Baby Med. Забор материала — на месте, без предварительной записи.",
+    uz: "Baby Med klinikasining o'z laboratoriyasida bajariladigan tahlillar prayskuranti. Material olish — joyida, oldindan yozilishsiz.",
+  } satisfies Localized,
+  note: {
+    ru: "Сроки готовности результатов и подготовку к анализу уточняйте по телефону:",
+    uz: "Natijalar tayyorlik muddati va tahlilga tayyorgarlikni telefon orqali aniqlashtiring:",
+  } satisfies Localized,
+  noteStrong: { ru: "Обратите внимание:", uz: "E'tibor bering:" } satisfies Localized,
+  toPrices: {
+    ru: "Цены на роды и палаты →",
+    uz: "Tug'ruq va palatalar narxlari →",
+  } satisfies Localized,
 };
