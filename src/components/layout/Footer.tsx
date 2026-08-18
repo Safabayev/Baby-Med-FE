@@ -65,7 +65,12 @@ export function Footer({ locale, compact = false }: FooterProps) {
                 </Link>
               </li>
               <li>
-                <Link href="/#doctors" className="transition hover:text-brand-pink">
+                <Link href="/analizy" className="transition hover:text-brand-pink">
+                  {t(nav.labs, locale)}
+                </Link>
+              </li>
+              <li>
+                <Link href="/vrachi" className="transition hover:text-brand-pink">
                   {t(nav.doctors, locale)}
                 </Link>
               </li>
@@ -92,6 +97,27 @@ export function Footer({ locale, compact = false }: FooterProps) {
                   {site.email}
                 </a>
               </li>
+              <li>
+                <a
+                  href={site.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-brand-pink"
+                >
+                  Instagram @{site.instagram}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={site.telegramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-brand-pink"
+                >
+                  Telegram
+                </a>
+              </li>
+              <li>{t(site.hoursShort, locale)}</li>
             </ul>
           </div>
         </div>

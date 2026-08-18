@@ -1,37 +1,36 @@
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
-import { pricesPage } from "@/content/copy";
-import { priceGroups } from "@/content/prices";
-import { priceValidFrom, site } from "@/content/site";
+import { labPage, pricesPage } from "@/content/copy";
+import { labGroups } from "@/content/labPrices";
+import { site } from "@/content/site";
 import { t } from "@/lib/i18n";
 import { PriceGroups } from "./PriceGroups";
 
-export function PricesPage({ locale }: { locale: Locale }) {
+export function LabPricesPage({ locale }: { locale: Locale }) {
   return (
     <>
-      <section className="bg-gradient-to-br from-brand-pink-light via-page to-brand-teal-light py-14 dark:bg-page dark:bg-none">
+      <section className="bg-gradient-to-br from-brand-teal-light via-page to-brand-pink-light py-14 dark:bg-page dark:bg-none">
         <div className="mx-auto max-w-7xl px-4 text-center">
-          <span className="text-sm font-semibold tracking-wider text-brand-pink uppercase">
-            {t(pricesPage.kicker, locale)}
+          <span className="text-sm font-semibold tracking-wider text-brand-teal uppercase dark:text-brand-pink">
+            {t(labPage.kicker, locale)}
           </span>
           <h1 className="mt-3 mb-4 text-3xl font-bold text-ink md:text-5xl">
-            {t(pricesPage.title, locale)}
+            {t(labPage.title, locale)}
           </h1>
-          <p className="mx-auto max-w-2xl text-muted">{t(pricesPage.lead, locale)}</p>
+          <p className="mx-auto max-w-2xl text-muted">{t(labPage.lead, locale)}</p>
           <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-line bg-card/80 px-4 py-1.5 text-sm font-medium text-muted backdrop-blur">
-            {t(pricesPage.validFrom, locale)}{" "}
-            <span className="font-semibold text-ink">{priceValidFrom}</span>
+            {t(site.legalName, locale)}
           </p>
         </div>
       </section>
 
       <section className="py-16">
         <div className="mx-auto max-w-5xl space-y-12 px-4">
-          <PriceGroups groups={priceGroups} locale={locale} />
+          <PriceGroups groups={labGroups} locale={locale} />
 
-          <div className="rounded-2xl bg-brand-pink-light p-6 text-center text-sm text-muted dark:bg-soft">
+          <div className="rounded-2xl bg-brand-teal-light p-6 text-center text-sm text-muted dark:bg-soft">
             <p>
-              <strong>{t(pricesPage.noteStrong, locale)}</strong> {t(pricesPage.note, locale)}{" "}
+              <strong>{t(labPage.noteStrong, locale)}</strong> {t(labPage.note, locale)}{" "}
               <a href={site.phoneHref} className="font-semibold text-brand-pink">
                 {site.phone}
               </a>
@@ -40,10 +39,10 @@ export function PricesPage({ locale }: { locale: Locale }) {
 
           <div className="text-center">
             <Link
-              href="/analizy"
-              className="inline-flex items-center gap-2 rounded-2xl border border-line bg-card px-7 py-3.5 font-semibold text-brand-teal transition hover:bg-soft dark:text-brand-pink"
+              href="/uslugi"
+              className="inline-flex items-center gap-2 rounded-2xl border border-line bg-card px-7 py-3.5 font-semibold text-brand-pink transition hover:bg-soft"
             >
-              {t(pricesPage.toLab, locale)}
+              {t(labPage.toPrices, locale)}
             </Link>
           </div>
         </div>

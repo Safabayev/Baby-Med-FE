@@ -21,16 +21,16 @@ export const advantages = [
     icon: "👨‍⚕️",
     title: { ru: "Опытные врачи", uz: "Tajribali shifokorlar" } satisfies Localized,
     text: {
-      ru: "Неонатолог со стажем 37 лет и квалифицированные гинекологи.",
-      uz: "37 yillik tajribaga ega neonatolog va malakali ginekologlar.",
+      ru: "Более 20 специалистов: гинекологи, неонатологи, педиатры, врачи УЗД.",
+      uz: "20 dan ortiq mutaxassis: ginekologlar, neonatologlar, pediatrlar, UZD shifokorlari.",
     } satisfies Localized,
   },
   {
     icon: "🔬",
-    title: { ru: "Современная диагностика", uz: "Zamonaviy diagnostika" } satisfies Localized,
+    title: { ru: "Своя лаборатория", uz: "O'z laboratoriyasi" } satisfies Localized,
     text: {
-      ru: "УЗИ-исследования на современном оборудовании.",
-      uz: "Zamonaviy uskunalarda UZI tekshiruvlari.",
+      ru: "УЗД и анализы крови, мочи, коагулограмма — прямо в клинике.",
+      uz: "UZD va qon, siydik tahlillari, koagulogramma — bevosita klinikada.",
     } satisfies Localized,
   },
   {
@@ -45,8 +45,8 @@ export const advantages = [
     icon: "📍",
     title: { ru: "Удобное расположение", uz: "Qulay joylashuv" } satisfies Localized,
     text: {
-      ru: "ул. Хонка, 164B — рядом с городской прокуратурой.",
-      uz: "Xonqa ko'chasi, 164B — shahar prokuraturasi yonida.",
+      ru: "ул. Ханкинская, 164 — рядом с городской прокуратурой.",
+      uz: "Xonqa ko'chasi, 164 — shahar prokuraturasi yonida.",
     } satisfies Localized,
   },
 ];
